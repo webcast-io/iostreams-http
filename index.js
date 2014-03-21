@@ -1,4 +1,3 @@
-
 'use strict';
 
 //
@@ -24,10 +23,10 @@ var getInputStream = function(config, callback) {
   });
 
   req.on('response', function(res) {
-    if(200 > res.statusCode < 300) {
-      return callback(new Error('Non 2xx statusCode: ' + res.statusCode), res);
-    } else {
+    if(200 <= res.statusCode < 300) {
       callback(null, res);
+    } else {
+      callback(new Error('Non 2xx statusCode: ' + res.statusCode), res);
     }
   });
 
