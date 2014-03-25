@@ -27,15 +27,15 @@
   },
   "homepage": "https://github.com/webcast-io/iostreams-http",
   "devDependencies": {
-    "mocha": "~1.15.1",
-    "istanbul": "~0.2.4",
-    "coveralls": "~2.7.1",
-    "grunt": "~0.4.2",
-    "grunt-mocha-test": "~0.9.3",
-    "grunt-contrib-jshint": "~0.8.0",
-    "grunt-cli": "^0.1.13",
-    "iostreams": "^1.0.0",
-    "express": "^3.5.0",
-    "multiparty": "^3.2.3"
+    "mocha": "1.15.1",
+    "istanbul": "0.2.4",
+    "coveralls": "2.7.1",
+    "grunt": "0.4.2",
+    "grunt-mocha-test": "0.9.3",
+    "grunt-contrib-jshint": "0.8.0",
+    "grunt-cli": "0.1.13",
+    "iostreams": "1.0.0",
+    "express": "3.5.0",
+    "multiparty": "3.2.3"
   }
 }
