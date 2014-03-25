@@ -42,7 +42,7 @@ var getInputStream = function(config, callback) {
 //
 var getOutputStream = function(config, callback) {
 
-  config.method = config.method || 'POST';
+  config.method = config.method || 'PUT';
 
   var req = http.request(config);
 
@@ -51,7 +51,7 @@ var getOutputStream = function(config, callback) {
   });
 
   req.on('response', function(res) {
-    callback(null, res);
+    callback(null, req);
   });
 
 };
