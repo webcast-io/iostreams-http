@@ -23,12 +23,14 @@ var getInputStream = function(config, callback) {
   });
 
   req.on('response', function(res) {
-    if(200 <= res.statusCode < 300) {
+    if(res.statusCode >= 200 && res.statusCode < 300) {
       callback(null, res);
     } else {
       callback(new Error('Non 2xx statusCode: ' + res.statusCode), res);
     }
   });
+
+  req.end();
 
 };
 
