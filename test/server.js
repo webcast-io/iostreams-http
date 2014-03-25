@@ -1,3 +1,4 @@
+'use strict';
 
 var http = require('http');
 var fs = require('fs');
@@ -5,7 +6,6 @@ var streamHash = require('./streamHash');
 
 
 var app = function(req, res) {
-
   if(req.url === '/get_hash') {
     streamHash(req, function(err, hash) {
       if(err) {
@@ -16,7 +16,7 @@ var app = function(req, res) {
         res.end(hash);
       }
     });
-    req.resume();
+
   } else if(req.url === '/199') {
     res.statusCode = 199;
     res.end('199');
@@ -38,6 +38,6 @@ var app = function(req, res) {
 
   }
 
-}
+};
 
 module.exports = http.createServer(app);

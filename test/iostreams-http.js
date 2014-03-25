@@ -2,11 +2,7 @@
 'use strict';
 
 var ioStream = require('iostreams')();
-var express  = require('express');
-var http     = require('http');
-var fs       = require('fs');
 var assert   = require('assert');
-var crypto   = require('crypto');
 var streamHash = require('./streamHash');
 var provider = require('../');
 
@@ -59,17 +55,25 @@ describe('iostreams-http', function() {
     // it('should provide a stream given a correct http string', function(done) {
     //   ioStream.getOutputStream('http://localhost:3000/get_hash', function(err, stream) {
     //     assert.ifError(err);
+
     //     var kitten = fs.createReadStream(__dirname + '/assets/kitten2.jpg');
     //     var buf = '';
-    //     console.log(stream.res)
-    //     stream.on('data', function(data) {
-    //       console.log('send:', data)
-    //       buf += data
+
+    //     stream.on('response', function(res) {
+
+    //       res.on('data', function(data) {
+    //         buf += data
+    //       });
+
+    //       res.on('end', function() {
+    //         assert.equal(buf, 'b5bbe413bbdc2536205bb798fe19ea27');
+    //       });
+
     //     });
-    //     stream.on('end', function() {
-    //       assert.equal(buf, 'b5bbe413bbdc2536205bb798fe19ea27');
-    //     })
+
     //     kitten.pipe(stream);
+    //     stream.end();
+
     //   });
     // });
     it('should provide an error given a http string with no http at path');

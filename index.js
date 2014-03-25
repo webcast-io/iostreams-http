@@ -46,13 +46,7 @@ var getOutputStream = function(config, callback) {
 
   var req = http.request(config);
 
-  req.on('error', function(err) {
-    callback(err);
-  });
-
-  req.on('response', function(res) {
-    callback(null, req);
-  });
+  callback(null, req);
 
 };
 

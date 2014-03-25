@@ -1,3 +1,4 @@
+'use strict';
 
 var crypto = require('crypto');
 
@@ -13,4 +14,4 @@ module.exports = function streamHash(stream, cb) {
     cb(null, hash.digest('hex'));
   });
 
-}
+};
